@@ -1,0 +1,13 @@
+# Site statique : aucune compilation, Netlify publie le dossier tel quel.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/frames/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
